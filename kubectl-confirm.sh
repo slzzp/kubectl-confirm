@@ -4,7 +4,11 @@
 # - kubectl delete namespace foobar
 
 # kubectl location
-KUBECTL=/usr/local/bin/kubectl
+if [ -f "/opt/homebrew/bin/kubectl" ]; then
+  KUBECTL=/opt/homebrew/bin/kubectl
+else
+  KUBECTL=/usr/local/bin/kubectl
+fi
 
 COMMAND=$1
 
